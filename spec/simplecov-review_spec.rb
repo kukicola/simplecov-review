@@ -13,7 +13,7 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
     subject { described_class.new.format(simplecov_result) }
 
     let(:simplecov_result) { SimpleCov.result }
-
+    let(:output_path) { File.join(SimpleCov.coverage_path, 'review.txt') }
     let(:expected_result) do
       [
         "spec/example/example.rb:5:1: Missing coverage for lines 5-6\n",
@@ -22,7 +22,8 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
     end
 
     it 'returns lines that are missing coverage' do
-      expect(subject).to eq(expected_result)
+      subject
+      expect(File.read(output_path)).to eq(expected_result)
     end
   end
 end
