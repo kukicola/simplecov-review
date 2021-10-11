@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Karol Bąk']
   spec.email         = ['kukicola@gmail.com']
 
-  spec.summary       = 'SimpleCov formatter to generate missing lines errors for reporting tools like Reviewdog'
+  spec.summary       = 'SimpleCov formatter to generate missing lines errors for reporting tools like reviewdog'
   spec.homepage      = 'https://github.com/kukicola/simplecov-review'
   spec.required_ruby_version = '>= 2.5.0'
 
