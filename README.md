@@ -1,8 +1,10 @@
-# Simplecov::Review
+# SimpleCov::Review
 
 SimpleCov formatter to generate missing lines errors for reporting tools
 like [reviewdog](https://github.com/reviewdog/reviewdog). It creates `coverage/review.txt` file containing uncovered
-lines in a format that can be easily used with reviewdog.
+lines in a format that can be easily used with reviewdog. 
+
+Example:
 
 ```
 app/controllers/admin/companies_controller.rb:16:1: Missing coverage for line 16
