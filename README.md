@@ -1,8 +1,8 @@
-# SimpleCov::Review
+# simplecov-review
 
 SimpleCov formatter to generate missing lines errors for reporting tools
 like [reviewdog](https://github.com/reviewdog/reviewdog). It creates `coverage/review.txt` file containing uncovered
-lines in a format that can be easily used with reviewdog. 
+lines in a format that can be easily used with reviewdog.
 
 Example:
 
@@ -41,7 +41,7 @@ end
 ### Reviewdog integration
 
 Since in your workflow rspec will be executed before reviewdog, make sure to disable minimum coverage check in
-SimpleCov.
+SimpleCov since it will stop the process in case of coverage below threshold.
 
 To keep minimum coverage checks take a look at my other
 library [simplecov-report-check-action](https://github.com/kukicola/simplecov-report-check-action), which makes it super
@@ -59,9 +59,14 @@ runner:
       - "%f:%l:%c: %m"
 ```
 
+Result:
+
+![reviewdog result](https://kukicola.io/assets/img/review/missing-coverage.png)
+
 If you require 100% line coverage in your project change `level` value to `error`.
 
 ## Roadmap
+
 * add branch coverage support
 
 ## Contributing
