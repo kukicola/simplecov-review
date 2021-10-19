@@ -41,11 +41,7 @@ end
 ### Reviewdog integration
 
 Since in your workflow rspec will be executed before reviewdog, make sure to disable minimum coverage check in
-SimpleCov since it will stop the process in case of coverage below threshold.
-
-To keep minimum coverage checks take a look at my other
-library [simplecov-report-check-action](https://github.com/kukicola/simplecov-report-check-action), which makes it super
-easy to report coverage percentage using GitHub Checks API.
+SimpleCov since it will stop the process in case the coverage is below threshold or configure you CI to execute it anyway (on GitHub Actions use `if: always()`).
 
 To report uncovered lines with reviewdog, add following lines to `.reviewdog.yml`:
 
