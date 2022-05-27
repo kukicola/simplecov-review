@@ -3,6 +3,7 @@
 class Example
   def abc
     a = 2 + 2
+
     a * 2
   end
 

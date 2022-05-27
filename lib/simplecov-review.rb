@@ -32,8 +32,25 @@ module SimpleCov
       end
 
       def find_missing_groups(file)
-        lines_missing = file.lines.each_index.select { |index| file.lines[index].coverage&.zero? }.map { |l| l + 1 }
+        lines_coverage = fill_blank_lines(file.lines)
+        lines_missing = lines_coverage.each_index.select { |index| lines_coverage[index].zero? }.map { |l| l + 1 }
         lines_missing.slice_when { |prev, curr| curr != prev.next }.to_a
+      end
+
+      def fill_blank_lines(lines)
+        forward = fill_missing(lines.map(&:coverage))
+        backward = fill_missing(lines.map(&:coverage).reverse).reverse
+
+        [forward, backward].transpose.map(&:compact).map(&:max)
+      end
+
+      def fill_missing(lines)
+        lines.each_index do |index|
+          next if index.zero?
+          next unless lines[index].nil?
+
+          lines[index] = lines[index - 1]
+        end
       end
 
       def export_path
