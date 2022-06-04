@@ -7,6 +7,9 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
   before do
     SimpleCov.start
     load 'example/example.rb'
+
+    Example.new.bcd(1)
+    Example.new.cde
   end
 
   describe '#format' do
@@ -17,7 +20,8 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
     let(:expected_result) do
       [
         "spec/example/example.rb:5:1: Missing coverage for lines 5-7\n",
-        "spec/example/example.rb:13:1: Missing coverage for line 13\n"
+        "spec/example/example.rb:13:1: Missing coverage for line 13\n",
+        "spec/example/example.rb:21:1: Missing coverage for line 21\n"
       ].join
     end
 

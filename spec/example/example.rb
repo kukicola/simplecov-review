@@ -16,7 +16,8 @@ class Example
   def cde
     'hello'
   end
-end
 
-Example.new.bcd(1)
-Example.new.cde
+  def xyz
+    'not covered'
+  end
+end
