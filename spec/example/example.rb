@@ -3,6 +3,7 @@
 class Example
   def abc
     a = 2 + 2
+
     a * 2
   end
 
@@ -15,7 +16,8 @@ class Example
   def cde
     'hello'
   end
-end
 
-Example.new.bcd(1)
-Example.new.cde
+  def xyz
+    'not covered'
+  end
+end
