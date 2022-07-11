@@ -21,7 +21,7 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
       [
         "spec/example/example.rb:5:1: Missing coverage for lines 5-7\n",
         "spec/example/example.rb:13:1: Missing coverage for line 13\n",
-        "spec/example/example.rb:21:1: Missing coverage for line 21\n"
+        "spec/example/example.rb:27:1: Missing coverage for line 27\n"
       ].join
     end
 

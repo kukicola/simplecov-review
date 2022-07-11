@@ -13,6 +13,12 @@ class Example
     arg**2
   end
 
+  # :nocov:
+  def another
+    'hi!'
+  end
+  # :nocov:
+
   def cde
     'hello'
   end

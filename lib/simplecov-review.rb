@@ -32,7 +32,8 @@ module SimpleCov
       end
 
       def find_missing_groups(file)
-        lines_coverage = [1] + file.lines.map(&:coverage) + [1] # assume line 0 is covered as well as the end of file
+        # assume line 0 is covered as well as the end of file, filter skipped coverage
+        lines_coverage = [1] + file.lines.map { |l| l.skipped? ? 1 : l.coverage } + [1]
         lines_coverage = fill_blank_lines(lines_coverage)
         lines_missing = lines_coverage.each_index.select { |index| lines_coverage[index].zero? }
         lines_missing.slice_when { |prev, curr| curr != prev.next }.to_a
