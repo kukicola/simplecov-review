@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'simplecov', '~> 0.21.2'
+  spec.add_dependency 'simplecov', '>= 0.21.2', '< 0.23'
 end
