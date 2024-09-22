@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     simplecov-review (0.2.0)
-      simplecov (~> 0.21.2)
+      simplecov (>= 0.21.2, < 0.23)
 
 GEM
   remote: https://rubygems.org/
@@ -11,8 +11,10 @@ GEM
     diff-lcs (1.4.4)
     docile (1.4.0)
     parallel (1.21.0)
-    parser (3.0.2.0)
+    parser (3.3.5.0)
       ast (~> 2.4.1)
+      racc
+    racc (1.8.1)
     rainbow (3.0.0)
     rake (13.0.6)
     regexp_parser (2.1.1)
@@ -44,7 +46,7 @@ GEM
     rubocop-rspec (2.5.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
-    simplecov (0.21.2)
+    simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
@@ -54,6 +56,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-23
   x86_64-darwin-18
   x86_64-linux
 
