@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.3.0] - 2024-09-22
 
 - allow simplecov 0.22 as dependency
 - include ruby 3.x in test suite
