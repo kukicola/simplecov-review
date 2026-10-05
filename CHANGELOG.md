@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.4.0] - 2026-10-05
 
 - require simplecov >= 1.0 and ruby >= 3.3
 - move coverage fixture out of `spec/` so SimpleCov 1.x default skips do not hide it
