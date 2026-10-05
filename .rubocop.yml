@@ -1,17 +1,22 @@
-require:
+plugins:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.3
   NewCops: enable
+  SuggestExtensions: false
 
 Naming/FileName:
   Exclude:
     - "lib/simplecov-review.rb"
     - "spec/simplecov-review_spec.rb"
 
+Style/Documentation:
+  Exclude:
+    - "example/**/*"
+
 RSpec/NamedSubject:
   Enabled: false
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Enabled: false

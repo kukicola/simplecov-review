@@ -6,7 +6,7 @@ require 'simplecov'
 RSpec.describe SimpleCov::Formatter::ReviewFormatter do
   before do
     SimpleCov.start
-    load 'example/example.rb'
+    load File.expand_path('../example/example.rb', __dir__)
 
     Example.new.bcd(1)
     Example.new.cde
@@ -19,9 +19,9 @@ RSpec.describe SimpleCov::Formatter::ReviewFormatter do
     let(:output_path) { File.join(SimpleCov.coverage_path, 'review.txt') }
     let(:expected_result) do
       [
-        "spec/example/example.rb:5:1: Missing coverage for lines 5-7\n",
-        "spec/example/example.rb:13:1: Missing coverage for line 13\n",
-        "spec/example/example.rb:27:1: Missing coverage for line 27\n"
+        "example/example.rb:5:1: Missing coverage for lines 5-7\n",
+        "example/example.rb:13:1: Missing coverage for line 13\n",
+        "example/example.rb:27:1: Missing coverage for line 27\n"
       ].join
     end
 
